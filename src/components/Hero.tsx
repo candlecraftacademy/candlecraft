@@ -1,63 +1,140 @@
-import React from 'react';
-import { Play } from 'lucide-react';
+import React, { useCallback } from 'react';
+import Particles from 'react-tsparticles';
+import { loadFull } from 'tsparticles';
 
 const Hero = () => {
+  const particlesInit = useCallback(async engine => {
+    await loadFull(engine);
+  }, []);
+
+  const particlesOptions = {
+    background: { color: { value: '#ffffff' } }, // light background
+    fpsLimit: 60,
+    particles: {
+      number: { value: 40, density: { enable: true, area: 800 } },
+      color: { value: '#000000' }, // black particles
+      opacity: { value: 0.05 },
+      size: { value: { min: 1, max: 3 } },
+      move: { enable: true, speed: 0.3, random: true },
+    },
+    detectRetina: true,
+  };
+
   return (
-    <section id="home" className="pt-24 pb-16 md:pt-32 md:pb-24 bg-gradient-to-b from-amber-50 to-white">
-      <div className="container mx-auto px-4">
-        <div className="grid grid-cols-1 lg:grid-cols-2 gap-8 items-center">
-          <div className="order-2 lg:order-1">
-            <p className="text-primary font-semibold mb-2">Welcome to Candle Craft Academy</p>
-            <h1 className="text-4xl md:text-5xl lg:text-6xl font-bold mb-4 text-dark">
-              Nepal’s Premier <br />
-              Trading Education Hub
-            </h1>
-            <p className="text-gray-600 mb-8 text-lg">
-              Master forex, gold, and prop firm trading with expert-led courses designed to turn Nepali traders into global market professionals.
-            </p>
-            <div className="flex flex-col sm:flex-row gap-4">
-              <a href="#courses" className="btn btn-primary">
-                Explore Courses
-              </a>
-              <a href="#watch-video" className="btn btn-outline flex items-center justify-center gap-2">
-                <Play size={16} className="text-primary" /> Watch Video
-              </a>
-            </div>
-          </div>
-          <div className="order-1 lg:order-2 flex justify-center">
-            <div className="relative">
-              <img 
-                src="https://i.imgur.com/eWG4HLD.png" 
-                alt="Trading Experts"
-                className="rounded-lg shadow-xl relative z-10 max-w-full h-auto"
-              />
-              <div className="absolute -bottom-6 -right-6 bg-primary text-white p-4 rounded-lg shadow-lg z-20 flex items-center">
-                <div className="mr-3">
-                  <div className="flex -space-x-2">
-                    <img 
-                      src="https://images.pexels.com/photos/2381069/pexels-photo-2381069.jpeg" 
-                      alt="Trader" 
-                      className="w-10 h-10 rounded-full border-2 border-white"
-                    />
-                    <img 
-                      src="https://images.pexels.com/photos/3760263/pexels-photo-3760263.jpeg" 
-                      alt="Trader" 
-                      className="w-10 h-10 rounded-full border-2 border-white"
-                    />
-                  </div>
-                </div>
-                <div>
-                  <p className="font-bold text-xs">1000+ Traders</p>
-                  <div className="flex items-center">
-                    <span className="text-yellow-300 text-xs">★★★★★</span>
-                    <span className="text-xs ml-1">5.0 (389 Reviews)</span>
-                  </div>
-                </div>
+    <section className="relative w-full text-black overflow-hidden bg-white font-poppins min-h-screen flex items-center">
+      <Particles init={particlesInit} options={particlesOptions} className="absolute inset-0 z-0" />
+
+      <div className="relative z-10 container mx-auto px-6 flex flex-col lg:flex-row items-center justify-between">
+        {/* LEFT COLUMN */}
+        <div className="lg:w-1/2 text-left py-20">
+          <h1 className="text-4xl md:text-6xl font-light leading-tight mb-8 tracking-tight">
+            Empowering Promising <br />
+            <span className="font-bold text-black">Traders Worldwide</span>
+          </h1>
+
+          {/* Features */}
+          <div className="flex flex-wrap gap-10 mb-10">
+            {[
+              {
+                icon: 'https://www.svgrepo.com/show/363874/database.svg',
+                title: 'Up to 95%',
+                desc: 'of Profit Split',
+              },
+              {
+                icon: 'https://www.svgrepo.com/show/354123/graph-growth.svg',
+                title: 'Up to $300k',
+                desc: 'Trading Accounts',
+              },
+              {
+                icon: 'https://www.svgrepo.com/show/366760/dollar.svg',
+                title: '24 Hours',
+                desc: 'Guaranteed Payout',
+              },
+              {
+                icon: 'https://www.svgrepo.com/show/372133/timer.svg',
+                title: 'No time limit',
+                desc: 'in Challenge Phase',
+              },
+            ].map((item, idx) => (
+              <div key={idx} className="flex flex-col items-center text-center w-32">
+                <img src={item.icon} alt={item.title} className="h-8 mb-2 opacity-80" />
+                <h4 className="font-bold text-base mb-1 text-black">{item.title}</h4>
+                <p className="text-xs text-gray-600">{item.desc}</p>
               </div>
-            </div>
+            ))}
+          </div>
+
+          {/* Buttons */}
+          <div className="flex flex-col sm:flex-row gap-4 mb-6">
+            <a
+              href="#"
+              className="relative inline-block px-8 py-4 text-lg font-semibold rounded-md bg-gradient-to-r from-[#f02b48] to-[#ff5f6d] text-white overflow-hidden shine-effect"
+            >
+              Start Challenge →
+            </a>
+            <a
+              href="#"
+              className="px-8 py-4 text-lg font-semibold rounded-md bg-gray-100 hover:bg-gray-200 text-black transition"
+            >
+              Free Trial
+            </a>
+          </div>
+
+          {/* Trustpilot */}
+          <div className="flex items-center gap-2 text-sm text-gray-600">
+            <span className="font-semibold text-black">Excellent</span>
+            <img
+              src="https://upload.wikimedia.org/wikipedia/commons/5/53/Trustpilot_logo_2022.svg"
+              alt="Trustpilot"
+              className="h-5"
+            />
+            <span>35,094 reviews on</span>
+            <span className="text-green-500 font-semibold">Trustpilot</span>
           </div>
         </div>
+
+        {/* RIGHT COLUMN */}
+        <div className="lg:w-1/2 flex justify-center items-end mt-10 lg:mt-0">
+          <img
+            src="https://i.imgur.com/jeX0VFM.png"
+            alt="Candles"
+            className="max-w-[400px] w-full opacity-80"
+          />
+        </div>
       </div>
+
+      {/* CSS */}
+      <style jsx>{`
+        @import url('https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;600&display=swap');
+        .font-poppins {
+          font-family: 'Poppins', sans-serif;
+        }
+
+        .shine-effect::before {
+          content: '';
+          position: absolute;
+          top: 0;
+          left: -75%;
+          width: 50%;
+          height: 100%;
+          background: linear-gradient(
+            120deg,
+            rgba(255, 255, 255, 0.2) 0%,
+            rgba(255, 255, 255, 0.5) 50%,
+            rgba(255, 255, 255, 0.2) 100%
+          );
+          transform: skewX(-20deg);
+          animation: shine 2.5s infinite;
+        }
+        @keyframes shine {
+          0% {
+            left: -75%;
+          }
+          100% {
+            left: 125%;
+          }
+        }
+      `}</style>
     </section>
   );
 };
