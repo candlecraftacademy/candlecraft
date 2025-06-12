@@ -1,7 +1,7 @@
 import React, { useCallback } from 'react';
 import Particles from 'react-tsparticles';
 import { loadFull } from 'tsparticles';
-import TradingViewWidget from './TradingViewWidget';
+import TradingViewWidget from './TradingViewWidget'; // ✅ IMPORT CORRECT
 
 const Hero = () => {
   const particlesInit = useCallback(async engine => {
@@ -9,11 +9,11 @@ const Hero = () => {
   }, []);
 
   const particlesOptions = {
-    background: { color: { value: 'transparent' } }, // Transparent background
+    background: { color: { value: 'transparent' } },
     fpsLimit: 60,
     particles: {
       number: { value: 40, density: { enable: true, area: 800 } },
-      color: { value: '#ffffff' }, // White particles for dark bg
+      color: { value: '#ffffff' },
       opacity: { value: 0.05 },
       size: { value: { min: 1, max: 3 } },
       move: { enable: true, speed: 0.3, random: true },
@@ -113,10 +113,10 @@ const Hero = () => {
         </div>
 
         {/* RIGHT COLUMN — TradingView Widget */}
-<div className="lg:w-1/2 flex justify-center items-end mt-10 lg:mt-0">
-  <TradingViewWidget />
-</div>
-
+        <div className="lg:w-1/2 flex justify-center items-end mt-10 lg:mt-0">
+          <TradingViewWidget />
+        </div>
+      </div>
 
       {/* CSS */}
       <style jsx>{`
