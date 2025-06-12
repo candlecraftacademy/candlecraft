@@ -15,7 +15,11 @@ const Header = () => {
   }, []);
 
   return (
-    <header className={`fixed top-0 left-0 right-0 z-50 transition-all duration-300 ${isScrolled ? 'bg-white shadow-md py-2' : 'bg-transparent py-4'}`}>
+    <header
+      className={`fixed top-0 left-0 right-0 z-50 transition-all duration-300 ${
+        isScrolled ? 'bg-white shadow-md py-2' : 'bg-transparent py-4'
+      }`}
+    >
       <div className="container mx-auto px-4">
         <div className="flex justify-between items-center">
           <a href="/" className="flex items-center">
@@ -28,10 +32,23 @@ const Header = () => {
 
           {/* Desktop Menu */}
           <nav className="hidden md:flex items-center space-x-8">
-            <a href="#home" className="text-dark-light hover:text-primary font-medium transition-colors">Home</a>
-            <a href="#about" className="text-dark-light hover:text-primary font-medium transition-colors">About Us</a>
-            <a href="#courses" className="text-dark-light hover:text-primary font-medium transition-colors">Courses</a>
-            <a href="#testimonials" className="text-dark-light hover:text-primary font-medium transition-colors">Testimonials</a>
+            {[
+              { label: 'Home', href: '#home' },
+              { label: 'About Us', href: '#about' },
+              { label: 'Courses', href: '#courses' },
+              { label: 'Testimonials', href: '#testimonials' },
+            ].map((item) => (
+              <a
+                key={item.label}
+                href={item.href}
+                className={`${
+                  isScrolled ? 'text-black' : 'text-gray-300'
+                } hover:text-primary font-medium transition-colors`}
+              >
+                {item.label}
+              </a>
+            ))}
+
             <a
               href="https://wa.me/9779866976329"
               target="_blank"
@@ -53,7 +70,9 @@ const Header = () => {
 
           {/* Mobile Menu Button */}
           <button
-            className="md:hidden text-dark-light"
+            className={`md:hidden ${
+              isScrolled ? 'text-black' : 'text-gray-300'
+            }`}
             onClick={() => setIsMenuOpen(!isMenuOpen)}
           >
             {isMenuOpen ? <X size={24} /> : <Menu size={24} />}
@@ -66,10 +85,21 @@ const Header = () => {
         <div className="md:hidden bg-white shadow-lg absolute top-full left-0 right-0 border-t">
           <div className="container mx-auto px-4 py-3">
             <div className="flex flex-col space-y-4">
-              <a href="#home" className="text-dark-light hover:text-primary font-medium transition-colors py-2">Home</a>
-              <a href="#about" className="text-dark-light hover:text-primary font-medium transition-colors py-2">About Us</a>
-              <a href="#courses" className="text-dark-light hover:text-primary font-medium transition-colors py-2">Courses</a>
-              <a href="#testimonials" className="text-dark-light hover:text-primary font-medium transition-colors py-2">Testimonials</a>
+              {[
+                { label: 'Home', href: '#home' },
+                { label: 'About Us', href: '#about' },
+                { label: 'Courses', href: '#courses' },
+                { label: 'Testimonials', href: '#testimonials' },
+              ].map((item) => (
+                <a
+                  key={item.label}
+                  href={item.href}
+                  className="text-gray-700 hover:text-primary font-medium transition-colors py-2"
+                >
+                  {item.label}
+                </a>
+              ))}
+
               <a
                 href="https://wa.me/9779866976329"
                 target="_blank"
