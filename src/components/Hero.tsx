@@ -111,12 +111,14 @@ const Hero = () => {
           </div>
         </div>
 
-        {/* RIGHT COLUMN — Investing.com Widget */}
+        {/* RIGHT COLUMN — FxStreet Widget */}
         <div className="lg:w-1/2 flex justify-center items-end mt-10 lg:mt-0">
-          <iframe 
-            src="https://ssltvc.forexprostools.com/?pair_ID=68&height=400&width=100%&interval=15&theme=dark&lang=1" 
-            width="100%" height="400" frameBorder="0" allowTransparency="true" marginWidth="0" marginHeight="0"
-            title="Investing.com Chart"
+          <iframe
+            src="https://www.fxstreet.com/feeds/widget/webfxr-latest-rates?theme=dark&currency=USD"
+            style={{ width: '100%', height: '400px', border: 'none' }}
+            allowTransparency="true"
+            scrolling="no"
+            title="FxStreet Market Rates"
           ></iframe>
         </div>
       </div>
