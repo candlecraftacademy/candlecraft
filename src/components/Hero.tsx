@@ -28,8 +28,8 @@ const Hero = () => {
         {/* LEFT COLUMN */}
         <div className="lg:w-1/2 text-left py-20">
           <h1 className="text-4xl md:text-6xl font-light leading-tight mb-8 tracking-tight">
-            Master Forex & Gold <br />
-            <span className="font-bold text-white">Trading with Candle Craft Academy</span>
+            Master Technical Analysis <br />
+            <span className="font-bold text-white">with Candle Craft Academy</span>
           </h1>
 
           {/* Features */}
