@@ -8,11 +8,11 @@ const Hero = () => {
   }, []);
 
   const particlesOptions = {
-    background: { color: { value: '#ffffff' } }, // light background
+    background: { color: { value: 'transparent' } }, // Transparent background
     fpsLimit: 60,
     particles: {
       number: { value: 40, density: { enable: true, area: 800 } },
-      color: { value: '#000000' }, // black particles
+      color: { value: '#ffffff' }, // White particles for dark bg
       opacity: { value: 0.05 },
       size: { value: { min: 1, max: 3 } },
       move: { enable: true, speed: 0.3, random: true },
@@ -21,7 +21,7 @@ const Hero = () => {
   };
 
   return (
-    <section className="relative w-full text-black overflow-hidden bg-white font-poppins min-h-screen flex items-center">
+    <section className="relative w-full text-white overflow-hidden bg-[#0a0f1c] font-poppins min-h-screen flex items-center">
       <Particles init={particlesInit} options={particlesOptions} className="absolute inset-0 z-0" />
 
       <div className="relative z-10 container mx-auto px-6 flex flex-col lg:flex-row items-center justify-between">
@@ -29,7 +29,7 @@ const Hero = () => {
         <div className="lg:w-1/2 text-left py-20">
           <h1 className="text-4xl md:text-6xl font-light leading-tight mb-8 tracking-tight">
             Empowering Promising <br />
-            <span className="font-bold text-black">Traders Worldwide</span>
+            <span className="font-bold text-white">Traders Worldwide</span>
           </h1>
 
           {/* Features */}
@@ -58,8 +58,8 @@ const Hero = () => {
             ].map((item, idx) => (
               <div key={idx} className="flex flex-col items-center text-center w-32">
                 <img src={item.icon} alt={item.title} className="h-8 mb-2 opacity-80" />
-                <h4 className="font-bold text-base mb-1 text-black">{item.title}</h4>
-                <p className="text-xs text-gray-600">{item.desc}</p>
+                <h4 className="font-bold text-base mb-1 text-white">{item.title}</h4>
+                <p className="text-xs text-[#9da1b3]">{item.desc}</p>
               </div>
             ))}
           </div>
@@ -74,22 +74,22 @@ const Hero = () => {
             </a>
             <a
               href="#"
-              className="px-8 py-4 text-lg font-semibold rounded-md bg-gray-100 hover:bg-gray-200 text-black transition"
+              className="px-8 py-4 text-lg font-semibold rounded-md bg-white bg-opacity-10 hover:bg-opacity-20 text-white transition"
             >
               Free Trial
             </a>
           </div>
 
           {/* Trustpilot */}
-          <div className="flex items-center gap-2 text-sm text-gray-600">
-            <span className="font-semibold text-black">Excellent</span>
+          <div className="flex items-center gap-2 text-sm text-[#9da1b3]">
+            <span className="font-semibold text-white">Excellent</span>
             <img
               src="https://upload.wikimedia.org/wikipedia/commons/5/53/Trustpilot_logo_2022.svg"
               alt="Trustpilot"
               className="h-5"
             />
             <span>35,094 reviews on</span>
-            <span className="text-green-500 font-semibold">Trustpilot</span>
+            <span className="text-green-400 font-semibold">Trustpilot</span>
           </div>
         </div>
 
