@@ -112,11 +112,11 @@ const Hero = () => {
           </div>
         </div>
 
-        {/* RIGHT COLUMN — TradingView Public Widget */}
         {/* RIGHT COLUMN — TradingView Widget */}
 <div className="lg:w-1/2 flex justify-center items-end mt-10 lg:mt-0">
   <TradingViewWidget />
 </div>
+
 
       {/* CSS */}
       <style jsx>{`
