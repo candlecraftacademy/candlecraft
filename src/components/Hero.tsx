@@ -73,8 +73,7 @@ const Hero = () => {
               Join Now →
             </a>
             <a
-              href="#watch-video"
-              className="px-8 py-4 text-lg font-semibold rounded-md bg-white bg-opacity-10 hover:bg-opacity-20 text-white transition"
+             a href="#watch-video" className="btn btn-outline flex items-center justify-center gap-2" hover:bg-opacity-20 text-white transition"
             >
               Watch Our Videos
             </a>
