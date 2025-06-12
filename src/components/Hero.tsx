@@ -112,11 +112,15 @@ const Hero = () => {
           </div>
         </div>
 
-        {/* RIGHT COLUMN — TradingView Widget */}
-        <div className="lg:w-1/2 flex justify-center items-end mt-10 lg:mt-0">
-          <TradingViewWidget />
-        </div>
-      </div>
+        {/* RIGHT COLUMN — Investing.com Widget */}
+<div className="lg:w-1/2 flex justify-center items-end mt-10 lg:mt-0">
+  <iframe 
+    src="https://ssltvc.forexprostools.com/?pair_ID=68&height=400&width=100%&interval=15&theme=dark&lang=1" 
+    width="100%" height="400" frameBorder="0" allowTransparency="true" marginWidth="0" marginHeight="0"
+    title="Investing.com Chart"
+  ></iframe>
+</div>
+
 
       {/* CSS */}
       <style jsx>{`
