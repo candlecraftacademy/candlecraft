@@ -28,32 +28,32 @@ const Hero = () => {
         {/* LEFT COLUMN */}
         <div className="lg:w-1/2 text-left py-20">
           <h1 className="text-4xl md:text-6xl font-light leading-tight mb-8 tracking-tight">
-            Empowering Promising <br />
-            <span className="font-bold text-white">Traders Worldwide</span>
+            Master Forex & Gold <br />
+            <span className="font-bold text-white">Trading with Candle Craft Academy</span>
           </h1>
 
           {/* Features */}
           <div className="flex flex-wrap gap-10 mb-10">
             {[
               {
-                icon: 'https://www.svgrepo.com/show/363874/database.svg',
-                title: 'Up to 95%',
-                desc: 'of Profit Split',
+                icon: 'https://www.svgrepo.com/show/408915/graduate-hat.svg',
+                title: '500+ Students',
+                desc: 'Trained in Forex & Gold',
               },
               {
                 icon: 'https://www.svgrepo.com/show/354123/graph-growth.svg',
-                title: 'Up to $300k',
-                desc: 'Trading Accounts',
+                title: 'Pass Funded Accounts',
+                desc: 'With Proven Strategy',
               },
               {
-                icon: 'https://www.svgrepo.com/show/366760/dollar.svg',
-                title: '24 Hours',
-                desc: 'Guaranteed Payout',
+                icon: 'https://www.svgrepo.com/show/319934/support.svg',
+                title: '1:1 Mentorship',
+                desc: 'From Pro Traders',
               },
               {
-                icon: 'https://www.svgrepo.com/show/372133/timer.svg',
-                title: 'No time limit',
-                desc: 'in Challenge Phase',
+                icon: 'https://www.svgrepo.com/show/478078/community-group.svg',
+                title: 'VIP Community',
+                desc: 'Lifetime Access',
               },
             ].map((item, idx) => (
               <div key={idx} className="flex flex-col items-center text-center w-32">
@@ -70,13 +70,13 @@ const Hero = () => {
               href="#"
               className="relative inline-block px-8 py-4 text-lg font-semibold rounded-md bg-gradient-to-r from-[#f02b48] to-[#ff5f6d] text-white overflow-hidden shine-effect"
             >
-              Start Challenge →
+              Join Now →
             </a>
             <a
               href="#"
               className="px-8 py-4 text-lg font-semibold rounded-md bg-white bg-opacity-10 hover:bg-opacity-20 text-white transition"
             >
-              Free Trial
+              Watch Our Videos
             </a>
           </div>
 
