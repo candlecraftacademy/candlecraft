@@ -111,14 +111,14 @@ const Hero = () => {
           </div>
         </div>
 
-        {/* RIGHT COLUMN — FxStreet Widget */}
+        {/* RIGHT COLUMN — CryptoCompare Widget */}
         <div className="lg:w-1/2 flex justify-center items-end mt-10 lg:mt-0">
           <iframe
-            src="https://www.fxstreet.com/feeds/widget/webfxr-latest-rates?theme=dark&currency=USD"
+            src="https://widgets.cryptocompare.com/serve/v3/coin/chart?fsym=BTC&tsyms=USD,EUR"
             style={{ width: '100%', height: '400px', border: 'none' }}
             allowTransparency="true"
             scrolling="no"
-            title="FxStreet Market Rates"
+            title="CryptoCompare BTC Chart"
           ></iframe>
         </div>
       </div>
