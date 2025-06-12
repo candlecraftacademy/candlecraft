@@ -1,6 +1,7 @@
 import React, { useCallback } from 'react';
 import Particles from 'react-tsparticles';
 import { loadFull } from 'tsparticles';
+import TradingViewWidget from './TradingViewWidget';
 
 const Hero = () => {
   const particlesInit = useCallback(async engine => {
@@ -112,16 +113,10 @@ const Hero = () => {
         </div>
 
         {/* RIGHT COLUMN — TradingView Public Widget */}
-        <div className="lg:w-1/2 flex justify-center items-end mt-10 lg:mt-0">
-          <iframe
-            src="https://www.tradingview.com/widgetembed/?frameElementId=tradingview_7c177&symbol=OANDA%3AXAUUSD&interval=15&hidesidetoolbar=1&theme=dark&style=1&timezone=Etc%2FUTC&hideideas=1&locale=en"
-            style={{ width: '100%', height: '400px', border: 'none' }}
-            allowTransparency="true"
-            scrolling="no"
-            title="TradingView Chart"
-          ></iframe>
-        </div>
-      </div>
+        {/* RIGHT COLUMN — TradingView Widget */}
+<div className="lg:w-1/2 flex justify-center items-end mt-10 lg:mt-0">
+  <TradingViewWidget />
+</div>
 
       {/* CSS */}
       <style jsx>{`
