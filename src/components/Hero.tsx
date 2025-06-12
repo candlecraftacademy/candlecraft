@@ -67,13 +67,13 @@ const Hero = () => {
           {/* Buttons */}
           <div className="flex flex-col sm:flex-row gap-4 mb-6">
             <a
-              href="#"
+              href="#courses"
               className="relative inline-block px-8 py-4 text-lg font-semibold rounded-md bg-gradient-to-r from-[#f02b48] to-[#ff5f6d] text-white overflow-hidden shine-effect"
             >
               Join Now →
             </a>
             <a
-              href="#"
+              href="#videos"
               className="px-8 py-4 text-lg font-semibold rounded-md bg-white bg-opacity-10 hover:bg-opacity-20 text-white transition"
             >
               Watch Our Videos
